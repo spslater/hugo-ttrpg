@@ -1,12 +1,12 @@
-# Hugo Book Theme
+# Hugo TTRPG Book Theme
 
 [![Hugo](https://img.shields.io/badge/hugo-0.134-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Build with Hugo](https://github.com/alex-shpak/hugo-book/workflows/Build%20with%20Hugo/badge.svg)
+![Build with Hugo](https://github.com/spslater/hugo-ttrpg/workflows/Build%20with%20Hugo/badge.svg)
 
 ### [Hugo](https://gohugo.io) documentation theme as simple as plain book
 
-![Screenshot](https://raw.githubusercontent.com/alex-shpak/hugo-book/master/images/screenshot.png)
+<!-- ![Screenshot](https://raw.githubusercontent.com/spslater/hugo-ttrpg/master/images/screenshot.png) -->
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -22,18 +22,16 @@
 
 - Clean simple design
 - Light and Mobile-Friendly
-- Multi-language support
 - Customisable
 - Zero initial configuration
 - Handy shortcodes
-- Comments support
 - Simple blog and taxonomy
 - Primary features work without JavaScript
 - Dark Mode
 
 ## Requirements
 
-- Hugo 0.134 or higher
+- Hugo 0.143 or higher
 - Hugo extended version, [Installation Instructions](https://gohugo.io/installation/)
 
 ## Installation
@@ -42,13 +40,13 @@
 Navigate to your hugo project root and run:
 
 ```
-git submodule add https://github.com/alex-shpak/hugo-book themes/hugo-book
+git submodule add https://github.com/spslater/hugo-ttrpg themes/hugo-ttrpg
 ```
 
-Then run hugo (or set `theme = "hugo-book"`/`theme: hugo-book` in configuration file)
+Then run hugo (or set `theme = "hugo-ttrpg"`/`theme: hugo-ttrpg` in configuration file)
 
 ```
-hugo server --minify --theme hugo-book
+hugo server --minify --theme hugo-ttrpg
 ```
 
 ### Install as hugo module
@@ -65,7 +63,7 @@ Navigate to your hugo project root and add [module] section to your `hugo.toml`:
 ```toml
 [module]
 [[module.imports]]
-path = 'github.com/alex-shpak/hugo-book'
+path = 'github.com/spslater/hugo-ttrpg'
 ```
 
 Then, to load/update the theme module and run hugo:
@@ -82,12 +80,12 @@ Below is an example on how to create a new site from scratch:
 ```sh
 hugo new site mydocs; cd mydocs
 git init
-git submodule add https://github.com/alex-shpak/hugo-book themes/hugo-book
-cp -R themes/hugo-book/exampleSite/content.en/* ./content
+git submodule add https://github.com/spslater/hugo-ttrpg themes/hugo-ttrpg
+cp -R themes/hugo-ttrpg/exampleSite/content.en/* ./content
 ```
 
 ```sh
-hugo server --minify --theme hugo-book
+hugo server --minify --theme hugo-ttrpg
 ```
 
 ## Menu
@@ -105,13 +103,9 @@ A blog is not the primary usecase of this theme, so it has only minimal features
 ### Site Configuration
 
 There are a few configuration options that you can add to your `hugo.toml` file.  
-You can also see the `yaml` example [here](https://github.com/alex-shpak/hugo-book/blob/master/exampleSite/hugo.yaml).
+You can also see the `yaml` example [here](https://github.com/spslater/hugo-ttrpg/blob/master/exampleSite/hugo.yaml).
 
 ```toml
-# (Optional) Set Google Analytics if you use it to track your website.
-# Always put it on the top of the configuration file, otherwise it won't work
-googleAnalytics = "UA-XXXXXXXXX-X"
-
 # (Optional) If you provide a Disqus shortname, comments will be enabled on
 # all pages.
 disqusShortname = "my-site"
@@ -147,7 +141,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/alex-shpak/hugo-book'
+  BookRepo = 'https://github.com/spslater/hugo-ttrpg'
 
   # Specifies commit portion of the link to the page's last modified commit hash for 'doc' page
   # type.
@@ -187,10 +181,6 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
   BookServiceWorker = true
 ```
-
-### Multi-Language Support
-
-Theme supports Hugo's [multilingual mode](https://gohugo.io/content-management/multilingual/), just follow configuration guide there. You can also tweak search indexing configuration per language in `i18n` folder.
 
 ### Page Configuration
 
@@ -251,7 +241,6 @@ In addition to this, there are several empty partials you can override to easily
 | `assets/_custom.scss`    | Customise or override scss styles                                                     |
 | `assets/_variables.scss` | Override default SCSS variables                                                       |
 | `assets/_fonts.scss`     | Replace default font with custom fonts (e.g. local files or remote like google fonts) |
-| `assets/mermaid.json`    | Replace Mermaid initialization config                                                 |
 
 ### Plugins
 
@@ -268,7 +257,6 @@ To enable plugins, add `@import "plugins/{name}";` to `assets/_custom.scss` in y
 
 There are a few hugo templates inserted in `<head>`
 
-- [Google Analytics](https://gohugo.io/templates/internal/#google-analytics)
 - [Open Graph](https://gohugo.io/templates/internal/#open-graph)
 
 To disable Open Graph inclusion you can create your own empty file `\layouts\_internal\opengraph.html`.
@@ -278,14 +266,6 @@ In fact almost empty not quite empty because an empty file looks like absent for
 ```
 
 ## Shortcodes
-
-- [Buttons](https://hugo-book-demo.netlify.app/docs/shortcodes/buttons/)
-- [Columns](https://hugo-book-demo.netlify.app/docs/shortcodes/columns/)
-- [Details](https://hugo-book-demo.netlify.app/docs/shortcodes/details/)
-- [Hints](https://hugo-book-demo.netlify.app/docs/shortcodes/hints/)
-- [KaTeX](https://hugo-book-demo.netlify.app/docs/shortcodes/katex/)
-- [Mermaid](https://hugo-book-demo.netlify.app/docs/shortcodes/mermaid/)
-- [Tabs](https://hugo-book-demo.netlify.app/docs/shortcodes/tabs/)
 
 By default, Goldmark trims unsafe outputs which might prevent some shortcodes from rendering. It is recommended to set `markup.goldmark.renderer.unsafe=true` if you encounter problems.
 
@@ -304,7 +284,7 @@ If you want lower maintenance, use one of the released versions. If you want to 
 
 ## Contributing
 
-### [Extra credits to contributors](https://github.com/alex-shpak/hugo-book/graphs/contributors)
+### [Extra credits to contributors](https://github.com/spslater/hugo-ttrpg/graphs/contributors)
 
 Contributions are welcome and I will review and consider pull requests.  
 Primary goals are:

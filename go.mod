@@ -1,3 +1,3 @@
-module github.com/alex-shpak/hugo-book
+module github.com/spslater/hugo-ttrpg
 
 go 1.16
