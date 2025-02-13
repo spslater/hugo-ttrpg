@@ -199,6 +199,32 @@
       margin-top: 0;
     }
   }
+
+  mark {
+    background-color: var(--hint-color-info);
+  }
+
+  aside {
+    float: right;
+    width: 50%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--body-aside-color);
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
+
+    p {
+      padding: 0rem;
+      margin: 0rem;
+    }
+  }
+
+  .flex aside {
+    width: 100%;
+  }
 }
 
 .markdown-inner {
